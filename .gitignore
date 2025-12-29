@@ -1,0 +1,36 @@
+# Dependências (Nunca envie isto, é demasiado pesado)
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+
+# Produção (Ficheiros gerados automaticamente)
+build
+dist
+
+# Ficheiros de Ambiente e Segurança (Contêm senhas/chaves API)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs de erro
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ficheiros do Sistema Operativo (Lixo visual)
+.DS_Store
+Thumbs.db
+
+# Editores de Código (Configurações locais suas)
+.vscode
+.idea
+*.suo
+*.ntvs
+*.njsproj
+*.sln
+*.sw?
