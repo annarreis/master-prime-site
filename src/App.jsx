@@ -138,24 +138,27 @@ const SpotlightCard = ({ children, className = "", borderColor = "rgba(255,255,2
   );
 };
 
-// Componente de Logo Atualizado (Imagem)
-const MasterPrimeLogo = () => (
-  <div className="h-10 md:h-12 w-48 relative flex items-center">
-    <img 
-      src="logo.png" 
-      alt="Master Prime Elite" 
-      className="h-full w-auto object-contain"
-      onError={(e) => {
-        // Fallback caso a imagem não carregue, mostra texto estilizado
-        e.target.style.display = 'none';
-        e.target.nextSibling.style.display = 'flex';
-      }}
-    />
-    <div className="hidden w-full h-full border border-dashed border-white/20 rounded-lg items-center justify-center bg-white/5 text-[10px] text-slate-400 uppercase tracking-widest font-bold">
-        LOGO.PNG
+// Componente de Logo Atualizado com Tratamento de Erro Robusto
+const MasterPrimeLogo = () => {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <div className="h-10 md:h-12 w-48 relative flex items-center">
+      {!imgError ? (
+        <img 
+          src="/logo.png" 
+          alt="Master Prime Elite" 
+          className="h-full w-auto object-contain"
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <div className="w-full h-full border border-dashed border-white/20 rounded-lg flex items-center justify-center bg-white/5 text-[10px] text-slate-400 uppercase tracking-widest font-bold px-2 text-center">
+            LOGO.PNG (404)
+        </div>
+      )}
     </div>
-  </div>
-);
+  );
+};
 
 const TextReveal = ({ text, className, delay = 0 }) => {
   const words = text.split(" ");
