@@ -346,8 +346,7 @@ function Hero() {
              <div className="flex -space-x-3">
                {[1,2,3,4].map(i => (
                  <div key={i} className="w-10 h-10 rounded-full border-2 border-[#020617] bg-slate-800 overflow-hidden ring-2 ring-white/5">
-                    <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Client" className="w-full h-full object-cover grayscale opacity-70 hover:opacity-100 transition-opacity" />
-                 </div>
+                       </div>
                ))}
              </div>
              <div>
